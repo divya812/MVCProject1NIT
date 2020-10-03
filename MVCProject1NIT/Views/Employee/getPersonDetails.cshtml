@@ -1,0 +1,17 @@
+﻿@model MVCProject1NIT.Models.EmpDept
+@{
+    ViewBag.Title = "getPersonDetails";
+}
+
+<h2>getPersonDetails</h2>
+
+@foreach (var item in Model.emp)
+{
+    if (item.EmpName == Model.name)
+    {
+        <p>Emp Id:item.EmpId</p>
+        Console.WriteLine("Emp Name:{0}", item.EmpName);
+        Console.WriteLine("Emp Id:{0}", item.EmpSalary);
+    }
+}
+

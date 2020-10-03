@@ -1,0 +1,54 @@
+﻿@model MVCProject1NIT.Models.EmpDept
+@{
+    ViewBag.Title = "GetObject";
+}
+<style type="text/css">
+    .code {
+        background-color: blueviolet;
+    }
+</style>
+
+<script>
+    function getDetails(Name) {
+
+    }
+</script>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2>GetObject</h2>
+
+@if (Model.choice == 1)
+{
+    @Model.empmodel.EmpId<br />
+    @Model.empmodel.EmpName<br />
+    @Model.empmodel.EmpSalary<br />
+
+}
+else
+{
+    foreach (var item in Model.emp)
+    {
+        @item.EmpId  <br />
+        @*@item.EmpName<br />*@
+        <a href="~/employee/getPersonDetails?empName=@item.EmpName" id="name" onclick="">@item.EmpName</a>  <br />
+        @item.EmpSalary<br />
+
+    }
+}
+
+
+@*@foreach (var item in Model.emp)
+{
+    if (item.EmpName == Model.name)
+    {
+        Console.WriteLine("Emp Id:{0}", item.EmpId);
+        Console.WriteLine("Emp Name:{0}", item.EmpName);
+        Console.WriteLine("Emp Id:{0}", item.EmpSalary);
+    }
+}*@
+
+
+<br />
+<input type="text" value="@Model.textboxValue" class="@Model.cssClass" />
+<br />
+

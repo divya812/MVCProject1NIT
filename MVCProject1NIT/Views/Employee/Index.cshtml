@@ -1,0 +1,47 @@
+﻿@model MVCProject1NIT.Models.EmpDept
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table-bordered">
+
+
+    @foreach (var item in Model.emp)
+    {
+        <tr>
+            <td>
+                @item.EmpId
+            </td>
+            <td>
+                @item.EmpName
+            </td>
+            <td>
+                @item.EmpSalary
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<table class="table-bordered">
+
+
+    @foreach (var item in Model.dept)
+    {
+        <tr>
+            <td>
+                @item.DeptId
+            </td>
+            <td>
+                @item.DeptName
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
